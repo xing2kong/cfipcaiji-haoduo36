@@ -29,11 +29,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      # 合并两个脚本执行
-      - name: Run scripts
+      # 第一个脚本
+      - name: Run collect_ips.py
         run: |
+          echo "=== 开始执行 collect_ips.py ==="
           python ${{ github.workspace }}/collect_ips.py
+          echo "=== collect_ips.py 执行完毕 ==="
+
+      # 第二个脚本
+      - name: Run collect_ips_old.py
+        run: |
+          echo "=== 开始执行 collect_ips_old.py ==="
           python ${{ github.workspace }}/collect_ips_old.py
+          echo "=== collect_ips_old.py 执行完毕 ==="
 
       - name: Commit and push changes
         run: |
