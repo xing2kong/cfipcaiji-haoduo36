@@ -6,7 +6,7 @@ import os
 # 目标URL列表
 urls = [
     'https://ip.164746.xyz', 
-    #'https://cf.090227.xyz', 
+    'https://cf.090227.xyz', 
     'https://api.uouin.com/cloudflare.html'
 ]
 
