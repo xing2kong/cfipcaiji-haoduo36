@@ -1,5 +1,8 @@
 每3小时自动抓取
 ```
+https://www.wetest.vip/page/edgeone/address_v4.html
+```
+```
 https://www.wetest.vip/page/cloudfront/address_v4.html
 ```
 ```
