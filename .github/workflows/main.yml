@@ -14,7 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -28,7 +29,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
 
-      - name: Run scripts
+      - name: Run script to collect IPs
         run: |
           python ${{ github.workspace }}/collect_ips.py
 
@@ -37,8 +38,9 @@ jobs:
           git config --global user.email "tianshideyou@proton.me"
           git config --global user.name "tianshipapa"
           if [ -n "$(git status --porcelain)" ]; then
-            git add ip.txt  # 只提交 ip.txt
+            git add ip.txt
             git commit -m "Automatic update"
             git push
           else
             echo "No changes detected, skipping commit."
+          fi
