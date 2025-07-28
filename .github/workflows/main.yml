@@ -32,25 +32,30 @@ jobs:
       # 第一个脚本
       - name: Run collect_ips.py
         run: |
-          echo "=== 开始执行 collect_ips.py ==="
+          echo "=== ✅ 开始执行 collect_ips.py ==="
           python ${{ github.workspace }}/collect_ips.py
-          echo "=== collect_ips.py 执行完毕 ==="
+          echo "=== ✅ collect_ips.py 执行完毕 ==="
 
       # 第二个脚本
       - name: Run collect_ips_old.py
         run: |
-          echo "=== 开始执行 collect_ips_old.py ==="
+          echo "=== ✅ 开始执行 collect_ips_old.py ==="
           python ${{ github.workspace }}/collect_ips_old.py
-          echo "=== collect_ips_old.py 执行完毕 ==="
+          echo "=== ✅ collect_ips_old.py 执行完毕 ==="
 
+      # 提交修改
       - name: Commit and push changes
         run: |
+          echo "=== ✅ 开始提交文件 ==="
           git config --global user.email "tianshideyou@proton.me"
           git config --global user.name "tianshipapa"
+          # 查看状态
+          git status
           if [ -n "$(git status --porcelain)" ]; then
-            git add ip.txt
+            git add ip.txt collect_ips.py collect_ips_old.py
             git commit -m "Automatic update"
             git push
+            echo "=== ✅ 已提交并推送 ==="
           else
-            echo "No changes detected, skipping commit."
+            echo "=== ℹ️ 没有文件变化，跳过提交 ==="
           fi
