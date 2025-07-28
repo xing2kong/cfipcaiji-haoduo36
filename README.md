@@ -1,12 +1,12 @@
 每3小时自动抓取
 ```
-https://www.wetest.vip/page/edgeone/address_v4.html  不稳定
+https://www.wetest.vip/page/edgeone/address_v4.html
 ```
 ```
-https://www.wetest.vip/page/cloudfront/address_v4.html   不稳定
+https://www.wetest.vip/page/cloudfront/address_v4.html
 ```
 ```
-https://www.wetest.vip/page/cloudflare/address_v4.html   不稳定
+https://www.wetest.vip/page/cloudflare/address_v4.html
 ```
 ```
 https://api.uouin.com/cloudflare.html   
@@ -19,6 +19,6 @@ https://ip.164746.xyz
 https://cf.090227.xyz
 ```
 ```
-https://stock.hostmonit.com/CloudFlareYes   不稳定
+https://stock.hostmonit.com/CloudFlareYes
 ```
 的优选ip，形成ip.txt 
